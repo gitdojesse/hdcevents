@@ -15,6 +15,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS da aplicação -->
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/extra.css">
     <script src="/js/scripts.js"></script>
 </head>
 
@@ -30,7 +31,7 @@
                         <a href="/" class="nav-link">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Criar Eventos</a>
+                        <a href="/events/create" class="nav-link">Criar Eventos</a>
                     </li>
                     <li class="nav-item">
                         <a href="/" class="nav-link">Entrar</a>
