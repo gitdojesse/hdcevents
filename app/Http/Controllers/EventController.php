@@ -3,25 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
         $events = Event::all();
-        return view('welcome', ['events' => $events,]);
+        return view('welcome', ['events' => $events]);
     }
 
     public function create()
     {
-        $teste2 = 'meu teste';
-        $teste = [
-            'nome' => 'JESSE',
-            'teste' => $teste2,
-            'cpr' => 71390685187,
-            'rg' => 2021660,
-        ];
+        return view('events.create');
+    }
 
-        echo "<h1>Deus tudo certo no " . $teste2 . " com o array " . $teste['cpr'] . "</h1>";
+    public function store(Request $request)
+    {
+        $event = new Event();
+        $event->title = $request->title;
+        $event->city = $request->city;
+        $event->private = $request->private;
+        $event->description = $request->description;
+        $event->save();
+
+        return redirect('/');
     }
 }
