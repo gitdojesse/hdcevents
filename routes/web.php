@@ -24,6 +24,4 @@ Route::get('/contact', function () {
     return view('contacts');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
